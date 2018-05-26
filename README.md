@@ -44,7 +44,8 @@ Now instead trying https://github.com/locationtech/geomesa/blob/master/geomesa-h
 However this also fails with many errors.
 
 ## gradle
+using gradle shadowJar plugin a `gradle shadowJar` works without any complaints. META_INF files are merged by default.
+I still need to test if the outputted JAR actually works - but the process of getting there seems to be by far less painful than SBT
 
 ## maven
-
-## mill
+same goes for maven
