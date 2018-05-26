@@ -1,3 +1,6 @@
 sbt/project/project/target
 sbt/project/target
 sbt/target
+dependency-reduced-pom.xml
+gradle/build
+gradle/.idea

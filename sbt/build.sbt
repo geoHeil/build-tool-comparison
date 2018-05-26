@@ -40,7 +40,8 @@ lazy val mydd =
 
     val sparkBase = "org.apache.spark" %% "spark-core"  % sparkV % "provided"
     val sparkSql  = "org.apache.spark" %% "spark-sql"   % sparkV % "provided"
-
+    
+    // val geomesaSparkHbaseRuntime = "org.locationtech.geomesa" %% "geomesa-hbase-spark-runtime" % geomesaV
     val geomesaSpark = "org.locationtech.geomesa" %% "geomesa-spark-sql" % geomesaV
 //    val geomesaFsds    = "org.locationtech.geomesa" %% "geomesa-fs-datastore"   % geomesaV
 //    val geomesaFsdsOrc = "org.locationtech.geomesa" %% "geomesa-fs-storage-orc" % geomesaV
@@ -52,14 +53,17 @@ lazy val commonDependencies = Seq(
   mydd.sparkSql,
 )
 lazy val geomesaDependencies = Seq(
-  mydd.geomesaSpark
+  //mydd.geomesaSparkHbaseRuntime,
+  mydd.geomesaSpark //,
+  // mydd.geomesaFsds, // when enabling geomesaFsds & orc additional clashes apply
+  // mydd.geomesaFsdsOrc,
 )
 
 
 libraryDependencies ++= commonDependencies ++ geomesaDependencies // ++ Seq("com.vividsolutions" % "jts" % "1.14") // 1.14 ist not found / not downloadable directly.
 
 // geomesa is using 1.14, but transitive dependency is 1.12 https://github.com/jdeolive/jai-tools/blob/master/utils/pom.xml
-excludeDependencies ++= Seq("com.vividsolutions" % "jts")
+// excludeDependencies ++= Seq("com.vividsolutions" % "jts")
 
 assemblyMergeStrategy in assembly := {
     case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
