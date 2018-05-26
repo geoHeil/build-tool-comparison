@@ -5,6 +5,8 @@ desired goal: get a fat jar of:
 - geotools
 - JAI
 
+currently in SBT are various assembly problems with duplicate stuff on the classpath. It might be related to not correctly parsing some exclusions in the maven pom files.
+It would be great if you have some ideas how to fix the
 ## sbt
 
 For the dependencies of:

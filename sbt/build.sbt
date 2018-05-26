@@ -56,7 +56,7 @@ lazy val geomesaDependencies = Seq(
 )
 
 
-libraryDependencies ++= commonDependencies ++ geomesaDependencies // ++ Seq("com.vividsolutions" % "jts" % "1.14")
+libraryDependencies ++= commonDependencies ++ geomesaDependencies // ++ Seq("com.vividsolutions" % "jts" % "1.14") // 1.14 ist not found / not downloadable directly.
 
 // geomesa is using 1.14, but transitive dependency is 1.12 https://github.com/jdeolive/jai-tools/blob/master/utils/pom.xml
 excludeDependencies ++= Seq("com.vividsolutions" % "jts")
